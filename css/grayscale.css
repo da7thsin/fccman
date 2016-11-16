@@ -117,13 +117,15 @@ a:focus {
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   }
 }
-.intro {
-  display: table;
+
+.intro, .intro-body{
   width: 100%;
-  height: auto;
+  height: 100%;
+}
+
+.intro{
   padding: 100px 0;
   text-align: center;
-  color: white;
   background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;
   background-color: black;
   -webkit-background-size: cover;
@@ -131,32 +133,49 @@ a:focus {
   background-size: cover;
   -o-background-size: cover;
 }
-.intro .intro-body {
-  display: table-cell;
-  vertical-align: middle;
+
+.intro-content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background: rgba(255,255,255, 0.9);
+  padding: 5px;
 }
-.intro .intro-body .brand-heading {
-  font-size: 40px;
+
+.intro-content .brand-heading{
+  margin: 0;
+  font-size: 60px;
+  color: #000;
 }
-.intro .intro-body .intro-text {
-  font-size: 18px;
+
+.intro-content .intro-text{
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 15px;
+  color:#000;
+  display: inline-block;
 }
+
 @media (min-width: 768px) {
-  .intro {
-    height: 100%;
-    padding: 0;
+  .intro .intro-body .intro-content{
+    width: 500px;
   }
-  .intro .intro-body .brand-heading {
+  .intro-content .brand-heading {
     font-size: 100px;
   }
-  .intro .intro-body .intro-text {
+  .intro-content .intro-text {
     font-size: 26px;
   }
 }
+
 .btn-circle {
+  position: absolute;
+  left: 50%;
+  bottom: 3.5%;
+  transform: translateX(-50%);
   width: 70px;
   height: 70px;
-  margin-top: 15px;
   padding: 7px 16px;
   border: 2px solid white;
   border-radius: 100% !important;
